@@ -1,9 +1,8 @@
 SampleApp::Application.routes.draw do
-  
+  #replaces the get 'user/new' parts and adds full REST support
+  resources :users
+    
   match '/signup', :to => 'users#new'
-
-  get "users/new"
-
   match '/', :to => 'pages#home'
   match '/home', :to => "pages#home"
   match '/contact', :to => "pages#contact"
